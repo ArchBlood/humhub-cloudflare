@@ -1,52 +1,41 @@
-Cloudflare API
-==================
+# Cloudflare API
 
-Yii2 Component for CloudFlare api v4.0. https://www.cloudflare.com/
+Yii2 Component for Cloudflare API v4.0. [Cloudflare](https://www.cloudflare.com/)
 
-Minimum requirements: Yii2, Curl
+## Minimum requirements
+- HumHub v1.x.x
+- cURL
 
-Installation via Composer:
-
-`composer require biozahard/yii2-cloudflare-api`
-
-
-Configuring in config.php:
-
+## Configuration in config.php
 ```php
 'components' => [
 //...
-        'cloudflare' => [
-            'class'         => 'biozahard\cloudflare\CloudflareApi',
-            'apiurl'   => 'https://api.cloudflare.com/client/v4/',
-            'authkey'       => '5gds0kfdsc024ndsofsj049jisdofjsd034jw',
-            'authemail'     => 'admin@mail.com',
-            'sites'         => [
-                'mysite.com',
-                'thebest-country.ua',
-                'anotheronesite.biz',
-            ],
-        ],
+    'cloudflare' => [
+        'class'         => 'humhub\components\CloudflareApi',
+        'apiUrl'        => 'https://api.cloudflare.com/client/v4/',
+        'authKey'       => '{api-key-here}',
+        'authEmail'     => 'admin@mail.com',
+    ],
 //...
 ]
 ```
 
-After this configuring you can use: `\Yii::$app->cloudflare`
+After configuring, you can use `\Yii::$app->cloudflare`.
 
-So, let's see some examples:
+## Usage Examples
 
-1. Purge all cloudflare cache:
-```
-//get the CloudFlare api component
+1. Purge all Cloudflare cache:
+
+```php
+// Get the Cloudflare API component
 $cf = \Yii::$app->cloudflare;
 
-//purge cache for specific website:
+// Purge cache for a specific website:
 $cf->purgeCache('thebest-country.ua');
 
-//Clear the cache for the first site from the specified list:
+// Clear the cache for the first site from the specified list:
 $cf->purgeCache();
 ```
 
-
-***
-
-License: LGPL v3 or later
+## License
+Licensed under AGPL v3 or later.
