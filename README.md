@@ -1,6 +1,6 @@
 # Cloudflare API
 
-Yii2 Component for Cloudflare API v4.0. [Cloudflare](https://www.cloudflare.com/)
+HumHub Component for Cloudflare API v4.0. [Cloudflare](https://www.cloudflare.com/)
 
 ## Minimum requirements
 - HumHub v1.x.x
